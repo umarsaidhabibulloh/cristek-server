@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string"
+    },
+    "telp": {
+      "type": "string"
+    },
+    "alamat": {
+      "type": "string"
+    },
+    "metode": {
+      "type": "enumeration",
+      "enum": [
+        "cod",
+        "transfer"
+      ]
+    },
+    "bukti": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "tanggalKirim": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "order",
+        "confirmed",
+        "delivery",
+        "closed"
+      ],
+      "default": "order"
+    }
+  }
+}

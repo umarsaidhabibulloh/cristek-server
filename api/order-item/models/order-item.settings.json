@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_items",
+  "info": {
+    "name": "orderItem"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order": {
+      "model": "order"
+    },
+    "varian": {
+      "type": "json"
+    },
+    "jumlah": {
+      "type": "biginteger"
+    },
+    "hargaSatuan": {
+      "type": "float"
+    }
+  }
+}
